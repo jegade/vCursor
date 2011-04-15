@@ -1,0 +1,10 @@
+.vcursor {
+    height: 16px;
+    width: 16px;
+    z-index: 9999999;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(/vcursor/img/cursor.png) center center no-repeat;
+    display: block;
+}
