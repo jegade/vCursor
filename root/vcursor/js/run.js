@@ -1,7 +1,7 @@
 var cursor = new vCursor();
-cursor.focusElement($('textbox'));
-cursor.typewriteText($('textbox'), "hallo Welt", 100);
-cursor.focusElement($('textbox2'));
-cursor.typewriteText($('textbox2'), "hallo Welt", 100);
-cursor.clickElement($('clickme'));
+cursor.focusElement($$('input[name=email]').getLast());
+cursor.typewriteText($$('input[name=email]').getLast(), "xxx", 100);
+cursor.focusElement($$('input[name=password]').getLast());
+cursor.typewriteText($$('input[name=password]').getLast(), "xxx", 100);
+cursor.submitForm($$('form').getLast());
 cursor.begin();

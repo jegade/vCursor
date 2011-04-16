@@ -72,6 +72,12 @@ var vCursor = new Class({
 
     },
 
+    submitForm: function(form) {
+
+        var these = this;
+        this.queue.chain(function() { form.submit(); });
+    },
+
     focusElement: function(element) {
 
         var these = this;
@@ -87,7 +93,6 @@ var vCursor = new Class({
         this.queue.chain( function() { element.set('value',''); these.next() });  
         
         stext.split("").each( function(chara) {
-            console.log(chara);
             these.queue.chain( function() { element.set('value', element.get('value') + chara  ); these.next(duration)});
         });
     }

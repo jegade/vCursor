@@ -53,7 +53,13 @@ sub call {
                 && ( $headers->get('Content-Type') || '' ) =~ m!^(?:text/html|application/xhtml\+xml)! )
             {
 
-                my $content = '<script>alert("Hello World");</script>';
+                my $content = qq|
+                
+                <link rel="stylesheet" href="/vcursor/ui.css" type="text/css" media="screen" />
+                <script src="/vcursor/js/vCursor.js" type="text/javascript"></script>
+                <script src="/vcursor/js/run.js" type="text/javascript"></script>
+  
+                |;
                 return sub {
                     my $chunk = shift;
                     return unless defined $chunk;
