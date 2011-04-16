@@ -55,7 +55,7 @@ sub call {
 
                 my $content = qq|
                 
-                <link rel="stylesheet" href="/vcursor/ui.css" type="text/css" media="screen" />
+                <link rel="stylesheet" href="/vcursor/css/ui.css" type="text/css" media="screen" />
                 <script src="/vcursor/js/vCursor.js" type="text/javascript"></script>
                 <script src="/vcursor/js/run.js" type="text/javascript"></script>
   
