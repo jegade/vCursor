@@ -5,18 +5,18 @@ var vCursor = new Class({
         var these = this;
         
         this.cursor = new Element('span', {
-            class: 'vcursor'
+            'class': 'vcursor'
         });
         
         this.cursor.set('move', {
-            duration: 3000,
+            duration: 1000,
             link: 'ignore',
-            onComplete: function() {   these.next();  }
+            transition:'sine:in',
+            onComplete: function() {   these.next();        }
         });
     
-        this.scroller = new Fx.Scroll(window, { duration: 2800 });
-        
-        
+        this.scroller = new Fx.Scroll(window, { duration: 1800, transition:'sine:in' });
+               
         this.queue = new Chain();
        
         this.cursor.inject(document.body);
@@ -38,7 +38,15 @@ var vCursor = new Class({
     moveTo: function(element, speed) {
 
         var these = this;
-        this.queue.chain(function() { these.scroller.toElement(element); these.cursor.move({ relativeTo: element }); });
+        this.queue.chain(function() { 
+                these.scroller.toElement(element); 
+                these.cursor.move({ 
+                relativeTo: element,   
+                position: 'upperLeft',
+                edge: 'upperLeft',
+                offset: {x: 10, y: 10}
+            }); 
+        });
     },
 
     // Highlight Element
